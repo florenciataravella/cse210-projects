@@ -24,6 +24,8 @@ class Program
         Random randomI = new Random();
         int s1 = scripture1.GetList().Count();
         int s2 = scripture2.GetList().Count();
+        int z;
+
         
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
         Console.WriteLine("Press Enter to display options");
@@ -42,8 +44,8 @@ class Program
         if (scr == 1)
 
         {
-
-            Console.WriteLine($"{reference.GetDisplayReference()} {scripture1.GetDisplayText()}");
+            z = 1;
+            Console.WriteLine($"{reference.GetDisplayReference()} {scripture1.GetDisplayText1()}");
            
             if (userInput != "quit")
             {
@@ -64,8 +66,10 @@ class Program
             }
         }
         else if (scr == 2)
+
         {
-            Console.WriteLine(scripture1.GetDisplayText());
+            z = 2;
+            Console.WriteLine(scripture1.GetDisplayText1());
             if (userInput != "quit")
             {
                 ConsoleKeyInfo keyInput = Console.ReadKey(true);

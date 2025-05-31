@@ -10,10 +10,6 @@ public class Journal
     {
         _entries.Add(newEntry);
 
-        // foreach (Entry line in _entries)
-        // {
-        //     line.Display();
-        // }
     }
     public void DisplayAll()
     {
