@@ -42,53 +42,27 @@ public class Scripture
         return _reference.GetDisplayRangedReference() + " " + fullText;
     }
 
-    public void HideRandomWords(int numberToHide)
+    public void HideRandomWords(int numberToHide, int z)
     {
-        while (_words[numberToHide].IsHidden() == true)
+        if (z == 1)
         {
-            
-        if (_words[numberToHide].IsHidden() == false)
+            do
             {
                 _words[numberToHide].Hide();
-                Console.WriteLine(GetDisplayText1());
-            }
-            else
-            {
-                Random randomF = new Random();
-                int rf = _words.Count();
-                int numberToHidef = randomF.Next(1, rf);
-
-                if (_words[numberToHidef].IsHidden() == false)
-                {
-                    _words[numberToHidef].Hide();
-                    Console.WriteLine(GetDisplayText1());
-                }
-             }
+                Console.WriteLine(_reference.GetDisplayReference());
+            } while (_words[numberToHide].IsHidden() == false);
         }
-    }
-    // public void HideRandomWords(int numberToHide)
-    // {
+        else
+           {
+            do
+            {
+                _words[numberToHide].Hide();
+                Console.WriteLine(_reference.GetDisplayRangedReference());
+            } while (_words[numberToHide].IsHidden() == false);
+        }
         
-    //     if (_words[numberToHide].IsHidden() == false)
-    //     {
-    //         _words[numberToHide].Hide();
-    //         Console.WriteLine(GetDisplayText1());
-    //     }
-    //     else
-    //     {
-    //         Random randomF = new Random();
-    //         int rf = _words.Count();
-    //         int numberToHidef = randomF.Next(1, rf);
-
-    //         if (_words[numberToHidef].IsHidden() == false)
-    //         {
-    //             _words[numberToHidef].Hide();
-    //             Console.WriteLine(GetDisplayText1());
-    //         }
-
-    //     }
-    // }
-
+    }
+ 
 public bool IsCompletelyHidden()
     {
         foreach (Word w in _words)

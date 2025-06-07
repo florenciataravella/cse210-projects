@@ -45,7 +45,7 @@ class Program
 
         {
             z = 1;
-            Console.WriteLine($"{reference.GetDisplayReference()} {scripture1.GetDisplayText1()}");
+            Console.WriteLine($" {scripture1.GetDisplayText1()}");
            
             if (userInput != "quit")
             {
@@ -57,7 +57,7 @@ class Program
                     if (keyInput.Key == ConsoleKey.Enter)
                     {
                         Console.Clear();
-                        scripture1.HideRandomWords(numberToHide);
+                        scripture1.HideRandomWords(numberToHide,1);
                         Console.ReadLine();
                     }
 
@@ -80,7 +80,7 @@ class Program
                     if (keyInput.Key == ConsoleKey.Enter)
                     {
                         Console.Clear();
-                        scripture2.HideRandomWords(numberToHide);
+                        scripture2.HideRandomWords(numberToHide,2);
                         Console.ReadLine();
                     }
 
