@@ -13,7 +13,7 @@ public class MathAssignment : Assignment
 }
     public string GetHomeworkList()
         {
-        return $"Section: {GetName()}{_textbookSection}, problems: {_problems}";
+        return $"Section: {_textbookSection}, problems: {_problems}";
         }
     
 }

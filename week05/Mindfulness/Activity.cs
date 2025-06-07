@@ -42,7 +42,7 @@ public class Activity
     }
     public void EndingMessage()
     {
-        string endingMessage = $"Well done!! \n You have completed another {_duration} seconds of the {_name}";
+        string endingMessage = $"Well done!! \nYou have completed another {_duration} seconds of the {_name}";
         Console.WriteLine(endingMessage);
     }
 
