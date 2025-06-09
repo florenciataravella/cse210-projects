@@ -1,5 +1,5 @@
 using System;
-
+// Hello grader! For exceeding the requirements, I made the questions random selection be able to show only items that haven't been shown. There is an issue however with the design in this situation: if the user chooses a long time for the reflecting activity, the program runs out of questions to display. I could partly save this inconvinience by forcing the input to be smaller than 80 seconds. There is more to be done till the program is fully organized if this is the user's choice, but I thought this would do for now.  
 class Program
 {
     static void Main(string[] args)

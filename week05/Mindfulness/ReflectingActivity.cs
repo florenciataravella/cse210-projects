@@ -18,6 +18,12 @@ public class ReflectingActivity : Activity
     {
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
+        if (_duration >= 80)
+        {
+            Console.WriteLine("The maximum duration session is 70 seconds");
+            return;
+        }
+        
         _prompts = new List<string>();
         _questions = new List<string>();
 
@@ -30,6 +36,7 @@ public class ReflectingActivity : Activity
         _prompts.Add(prompt2);
         _prompts.Add(prompt3);
         _prompts.Add(prompt4);
+    
 
         string question1 = "Why was this experience meaningful to you?";
         string question2 = "Have you ever done anything like this before?";
@@ -77,11 +84,14 @@ public class ReflectingActivity : Activity
 
         {
             Random randomq = new Random();
-            int ranq = randomq.Next(0, 9);
+            int ranq = randomq.Next(0, _questions.Count());
 
             Console.WriteLine(_questions[ranq]);
+            _questions.RemoveAt(ranq);
             ShowSpinner(7);
             Console.WriteLine();
+
+            
         }
         Console.WriteLine();
 
