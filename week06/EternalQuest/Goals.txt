@@ -1,0 +1,4 @@
+0
+SimpleGoal: give a talk,speak in sacrament meeting,2,False
+EternalGoal: read the scriptures,everyday fssdfa,3
+ChecklistGoal: go to the temple,attend the temple,4,100,3,0
