@@ -3,33 +3,30 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
 
-public class Activity
+public abstract class Activity
 {
-    protected double _time;
-    protected double _distance;
+    protected double _length;
     protected string _date;
     protected string _activity;
-    public Activity(double time, double distance)
+    public Activity(double length)
     {
-        _time = time;
-        _distance = distance;
+        _length = length;
         _activity = "";
-
     }
-    public double GetTime()
+    public double GetLength()
     {
-        return _time;
+        return _length;
     }
+    public abstract Double GetDistance();
+    public abstract double GetSpeed();
+    public abstract double GetPace();
+    
     
     public string GetDate()
     {
         DateTime date = DateTime.Now;
-        _date=date.ToString("dd MMM yyyy");
+        _date = date.ToString("dd MMM yyyy");
         return _date;
-    }
-    public double GetDistance()
-    {
-        return _distance;
     }
     public string GetActivity()
     {
@@ -38,7 +35,7 @@ public class Activity
     
     public virtual string GetSummary()
     {
-        return $"{GetDate()} {GetActivity()} ({GetTime()} min). Distance {GetDistance()}km, Speed {(GetDistance() / GetTime() * 60).ToString("F2")} kph, Pace: {GetTime() / GetDistance()} min per km";
+        return $"{GetDate()} {GetActivity()} ({GetLength()}min)";
     }
 
 
